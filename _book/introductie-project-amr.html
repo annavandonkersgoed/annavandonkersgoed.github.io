@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Vrije opdracht | Portfolio Data Science for Biology 2</title>
-  <meta name="description" content="Chapter 4 Vrije opdracht | Portfolio Data Science for Biology 2" />
+  <title>Chapter 10 Introductie project AMR | Portfolio Data Science for Biology 2</title>
+  <meta name="description" content="Chapter 10 Introductie project AMR | Portfolio Data Science for Biology 2" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Vrije opdracht | Portfolio Data Science for Biology 2" />
+  <meta property="og:title" content="Chapter 10 Introductie project AMR | Portfolio Data Science for Biology 2" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Vrije opdracht | Portfolio Data Science for Biology 2" />
+  <meta name="twitter:title" content="Chapter 10 Introductie project AMR | Portfolio Data Science for Biology 2" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="plan-voor-de-toekomst.html"/>
-<link rel="next" href="data-management.html"/>
+<link rel="prev" href="r-package.html"/>
+<link rel="next" href="paramized-markdown.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -123,6 +123,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -145,8 +167,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#planning"><i class="fa fa-check"></i><b>4.2</b> Planning</a></li>
 <li class="chapter" data-level="4.3" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#uitwerking-vrije-opdracht"><i class="fa fa-check"></i><b>4.3</b> Uitwerking vrije opdracht</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>5</b> Data management</a></li>
-<li class="chapter" data-level="6" data-path="data-management-2.html"><a href="data-management-2.html"><i class="fa fa-check"></i><b>6</b> Data management 2</a></li>
+<li class="chapter" data-level="5" data-path="data-management-deel-1.html"><a href="data-management-deel-1.html"><i class="fa fa-check"></i><b>5</b> Data management deel 1</a></li>
+<li class="chapter" data-level="6" data-path="data-management-deel-2.html"><a href="data-management-deel-2.html"><i class="fa fa-check"></i><b>6</b> Data management deel 2</a></li>
 <li class="chapter" data-level="7" data-path="reproducable-science-data-analysis.html"><a href="reproducable-science-data-analysis.html"><i class="fa fa-check"></i><b>7</b> Reproducable science data analysis</a></li>
 <li class="chapter" data-level="8" data-path="reproducable-science-article.html"><a href="reproducable-science-article.html"><i class="fa fa-check"></i><b>8</b> Reproducable science article</a>
 <ul>
@@ -174,120 +196,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="vrije-opdracht" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Vrije opdracht<a href="vrije-opdracht.html#vrije-opdracht" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In dit gedeelte van het portfolio laat ik een techniek zien waar ik intersse voor heb. Dit gedeelte bestaat uit drie delen. In het eerste gedeelte vertel ik over de techniek en waarom het van toepassing voor mij is om dit te leren. Daarna staat mijn planning om deze techniek te leren en als laatste is een workflow met voorbeelden hoe ik de techniek geleerd heb</p>
-<div id="onderbouwing-gebasseerd-op-toekomstplan" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Onderbouwing gebasseerd op toekomstplan<a href="vrije-opdracht.html#onderbouwing-gebasseerd-op-toekomstplan" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Voor dit onderdeel heb ik gekozen om single cell RNA sequencing data te analyseren. Dit vooral omdat dit te maken gaat hebben met mijn stage. Hierbij wordt er namelijk gekeken naar de interactie tussen bacteriën en humane cellen. Deze techniek kan goed gebruikt worden om te kijken naar de individuele cellen, aangezien niet alle bacteriën in alle cellen gaan zitten. Daarnaast ga ik als techniek ook flow sorting doen van humane cellen, dus past deze analyse er goed in. Ook in de toekomst zou het me interessant lijken om deze techniek verder te gebruiken om te kijken welke cellen er bijvoorbeeld in kankerpatiënten zitten en of cellen bepaalde pathhways gebruiken in de aanwezigheid van bacteriën om bijvoorbeeld chemoresistentie te onderzoeken. Vanuit deze redenen lijkt het me handig om meer inzicht in deze skill te hebben.</p>
-<p>Als doel van dit onderdeel wil ik voor mezelf een workflow opstellen zodat ik later dit bestand terug kan halen en makkelijk de stappen voor de analyses kan uitvoeren en begrijpen.</p>
-</div>
-<div id="planning" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Planning<a href="vrije-opdracht.html#planning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Tijdens deze opdracht wordt er 32 uur besteed om de skill te leren. Op het einde van de opdracht zal ik reflecteren op deze planning en kijken wat er in de toekomst beter kan.</p>
-<table>
-<colgroup>
-<col width="8%" />
-<col width="91%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Aantal uur</th>
-<th>Content</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Dag 1</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2h</td>
-<td>Inlezen over het onderwerp, wat is de standaard workflow</td>
-</tr>
-<tr class="odd">
-<td>1h</td>
-<td>Inlezen over het onderwerp, wat zijn de methodes die kunnen worden gebruikt en in wat voor onderzoek wordt deze techniek gebruikt.</td>
-</tr>
-<tr class="even">
-<td>2h</td>
-<td>Maken van de planning, zoek op welke stappen er nodig zijn voor de analyse en plan dit in</td>
-</tr>
-<tr class="odd">
-<td>1h</td>
-<td>Schrijf waarom deze techniek relevant is voor de toekomst</td>
-</tr>
-<tr class="even">
-<td>2h</td>
-<td>Volgen van tutorial (source), om een indruk te krijgen van de stappen die nodig zijn.</td>
-</tr>
-<tr class="odd">
-<td>Dag 2</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2h</td>
-<td>Eindig de tutorial, van dag 1</td>
-</tr>
-<tr class="odd">
-<td>4h</td>
-<td>Volg nieuwe tutorial (source). Voer delen uit van de algemene analyse uit met een nieuwe dataset.</td>
-</tr>
-<tr class="even">
-<td>2h</td>
-<td>Voeg delen van beide tutorial samen om een workflow op te stellen</td>
-</tr>
-<tr class="odd">
-<td>Dag 3</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2h</td>
-<td>Cellen annoteren, gebruik verschillende methodes en kijk welke methode het beste werkt.</td>
-</tr>
-<tr class="odd">
-<td>6h</td>
-<td>Voer exploratory analyses uit. Hieronder vallen de functional enrichment analysis, pseudo time analysis en cell-cell communicatie analyses. De gekozen analyses hangen af van de dataset.</td>
-</tr>
-<tr class="even">
-<td>Dag 4</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>2h</td>
-<td>Maak workflow document in Rmarkdown.</td>
-</tr>
-<tr class="even">
-<td>4h</td>
-<td>Voer de analyses uit met een nieuwe dataset.</td>
-</tr>
-<tr class="odd">
-<td>2h</td>
-<td>Zorg ervoor dat de figuren duidelijk zijn.</td>
-</tr>
-<tr class="even">
-<td>2h</td>
-<td>Schrijf over welke stappen er in de toekomst nog nodig zijn om expert te worden in dit onderwerp.</td>
-</tr>
-</tbody>
-</table>
-<p>De tabel is gemaakt met de table generator (source)</p>
-</div>
-<div id="uitwerking-vrije-opdracht" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> Uitwerking vrije opdracht<a href="vrije-opdracht.html#uitwerking-vrije-opdracht" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Hier staat een workflow om single cell RNA sequencing data uit te werken.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="vrije-opdracht.html#cb1-1" tabindex="-1"></a><span class="co">#Load libraries </span></span>
-<span id="cb1-2"><a href="vrije-opdracht.html#cb1-2" tabindex="-1"></a><span class="co">#library(tidyverse)</span></span>
-<span id="cb1-3"><a href="vrije-opdracht.html#cb1-3" tabindex="-1"></a><span class="co">#library(Seurat)</span></span>
-<span id="cb1-4"><a href="vrije-opdracht.html#cb1-4" tabindex="-1"></a><span class="co">#library(patchwork)</span></span>
-<span id="cb1-5"><a href="vrije-opdracht.html#cb1-5" tabindex="-1"></a><span class="co">#library(hdf5r)</span></span>
-<span id="cb1-6"><a href="vrije-opdracht.html#cb1-6" tabindex="-1"></a><span class="co">#library(dplyr)</span></span>
-<span id="cb1-7"><a href="vrije-opdracht.html#cb1-7" tabindex="-1"></a><span class="co">#library(celldex)</span></span>
-<span id="cb1-8"><a href="vrije-opdracht.html#cb1-8" tabindex="-1"></a><span class="co">#library(SingleR)</span></span>
-<span id="cb1-9"><a href="vrije-opdracht.html#cb1-9" tabindex="-1"></a><span class="co">#library(viridis)</span></span>
-<span id="cb1-10"><a href="vrije-opdracht.html#cb1-10" tabindex="-1"></a><span class="co">#library(pheatmap)</span></span></code></pre></div>
-<p>De eerste stap was om een tutorial te volgen. Dit werd gedaan door dit artikel (source). De data hiervan is niet weergeven. Daarna werd er een tutorial gevolgd (source) waarbij de dataset werd gebruikt van een 27 jarige gezonde man met als sample human peripheral blood mononuclear cells (PBMCs). Dit is een andere dataset dan degene die in de tutorial wordt gebruikt.</p>
+<div id="introductie-project-amr" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Introductie project AMR<a href="introductie-project-amr.html#introductie-project-amr" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Introductie project antimicrobiële resistentie</strong></p>
+<p>Micro-organismen kunnen infecties veroorzaken. Om deze infecties te voorkomen of behandelen worden er microbiële middelen gebruikt. Dit zijn middelen die voor decennia gebruikt zijn, met in het begin groot succes. Echter is gebleken dat micro-organismen resistentie kunnen ontwikkelen tegen deze middelen, wat een groot probleem veroorzaak. Hierdoor raken ze ongevoelig tegen medicatie en is het lastiger om de patiënt te behandelen. Het resistent worden tegen microbiële middelen heet antimicrobiële resistentie (AMR) <span class="citation">(<a href="#ref-brinkacThreatAntimicrobialResistance2017">Brinkac et al. 2017</a>; <a href="#ref-ResistenteMicroorganismenRIVM"><span>“Resistente Micro-Organismen | <span>RIVM</span>,”</span> n.d.</a>)</span>. Bacteriën vallen ook onder micro-organismen en kunnen resistentie vertonen door twee hoofdmechanismes. Ze kunnen al resistent zijn voordat de behandeling begint of ze kunnen resistentie ontwikkelen over een bepaalde tijdsperiode heen <span class="citation">(<a href="#ref-reygaertOverviewAntimicrobialResistance2018">Reygaert 2018</a>)</span>. Daarnaast kunnen bacteriën resistentie met elkaar uitwisselen. Dit gebeurd doordat bacteriën horizontaal een resistoom kunnen uitwisselen waar de resistentiegenen opzitten (source).</p>
+<p>Om het AMR probleem aan te pakken zijn er meerdere sectoren nodig om kennis uit te wisselen. Dit wordt gedaan door het One Health approach. Deze aanpak streeft naar het verbeteren en optimaliseren van de gezondheid van mensen, dieren en het milieu <span class="citation">(<a href="#ref-AntimicrobialResistance"><span>“Antimicrobial Resistance,”</span> n.d.</a>)</span>. In dit project wordt er een pipeline gemaakt om de uitwisseling van het resistoom door Nederland te monitoren. Hierbij wordt er de pipeline gemaakt van een al bestaande workflow en worden er ook applicaties toegevoegd. Uiteindelijk moet de data gevisualiseerd worden in een Rshiny app. Daarnaast gaat dit project ook over samenwerken volgens de Guerilla Analytics <span class="citation">(<a href="#ref-GuerrillaAnalytics2014a"><em>Guerrilla <span>Analytics</span></em> 2014</a>)</span>. Dit wordt gedaan door version control software, sprints, goede planning en communicatie aangezien er met een externe opdrachtgever gewerkt wordt.</p>
 
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-AntimicrobialResistance" class="csl-entry">
+<span>“Antimicrobial Resistance.”</span> n.d. Accessed May 22, 2026. <a href="https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance">https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance</a>.
+</div>
+<div id="ref-brinkacThreatAntimicrobialResistance2017" class="csl-entry">
+Brinkac, Lauren, Alexander Voorhies, Andres Gomez, and Karen E. Nelson. 2017. <span>“The <span>Threat</span> of <span>Antimicrobial Resistance</span> on the <span>Human Microbiome</span>.”</span> <em>Microbial Ecology</em> 74 (4): 1001–8. <a href="https://doi.org/10.1007/s00248-017-0985-z">https://doi.org/10.1007/s00248-017-0985-z</a>.
+</div>
+<div id="ref-GuerrillaAnalytics2014a" class="csl-entry">
+<em>Guerrilla <span>Analytics</span></em>. 2014. <a href="https://shop.elsevier.com/books/guerrilla-analytics/ridge/978-0-12-800218-6">https://shop.elsevier.com/books/guerrilla-analytics/ridge/978-0-12-800218-6</a>.
+</div>
+<div id="ref-ResistenteMicroorganismenRIVM" class="csl-entry">
+<span>“Resistente Micro-Organismen | <span>RIVM</span>.”</span> n.d. Accessed May 22, 2026. <a href="https://www.rivm.nl/antimicrobiele-resistentie/brmo">https://www.rivm.nl/antimicrobiele-resistentie/brmo</a>.
+</div>
+<div id="ref-reygaertOverviewAntimicrobialResistance2018" class="csl-entry">
+Reygaert, Wanda C. 2018. <span>“An Overview of the Antimicrobial Resistance Mechanisms of Bacteria.”</span> <em>AIMS Microbiology</em> 4 (3): 482–501. <a href="https://doi.org/10.3934/microbiol.2018.3.482">https://doi.org/10.3934/microbiol.2018.3.482</a>.
 </div>
 </div>
             </section>
@@ -295,8 +226,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="plan-voor-de-toekomst.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-management.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="r-package.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="paramized-markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

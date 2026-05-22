@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data-management-2.html"/>
+<link rel="prev" href="data-management-deel-2.html"/>
 <link rel="next" href="reproducable-science-article.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -123,6 +123,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -145,8 +167,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#planning"><i class="fa fa-check"></i><b>4.2</b> Planning</a></li>
 <li class="chapter" data-level="4.3" data-path="vrije-opdracht.html"><a href="vrije-opdracht.html#uitwerking-vrije-opdracht"><i class="fa fa-check"></i><b>4.3</b> Uitwerking vrije opdracht</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>5</b> Data management</a></li>
-<li class="chapter" data-level="6" data-path="data-management-2.html"><a href="data-management-2.html"><i class="fa fa-check"></i><b>6</b> Data management 2</a></li>
+<li class="chapter" data-level="5" data-path="data-management-deel-1.html"><a href="data-management-deel-1.html"><i class="fa fa-check"></i><b>5</b> Data management deel 1</a></li>
+<li class="chapter" data-level="6" data-path="data-management-deel-2.html"><a href="data-management-deel-2.html"><i class="fa fa-check"></i><b>6</b> Data management deel 2</a></li>
 <li class="chapter" data-level="7" data-path="reproducable-science-data-analysis.html"><a href="reproducable-science-data-analysis.html"><i class="fa fa-check"></i><b>7</b> Reproducable science data analysis</a></li>
 <li class="chapter" data-level="8" data-path="reproducable-science-article.html"><a href="reproducable-science-article.html"><i class="fa fa-check"></i><b>8</b> Reproducable science article</a>
 <ul>
@@ -187,7 +209,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>De eerste stap is het inlezen van de data</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="reproducable-science-data-analysis.html#cb2-1" tabindex="-1"></a>Celegans_dataset <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;raw_data&quot;</span>, <span class="st">&quot;Data010&quot;</span>, <span class="st">&quot;CE.LIQ.FLOW.062_Tidydata.xlsx&quot;</span>), <span class="at">sheet =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p>Na het inlezen van de data wordt de data gecontroleerd op het type.</p>
+<p>Na het inlezen van de data wordt de data gecontroleerd op wat voor type het is.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="reproducable-science-data-analysis.html#cb3-1" tabindex="-1"></a><span class="fu">str</span>(Celegans_dataset)</span></code></pre></div>
 <p>Er zijn een paar data type die veranderd moeten worden. De ruwe data is als double maar moet een integer worden aangezien het hele getallen zijn. De concentratie is als character weergeven maar moet als numeric omdat het decimalen heeft. Als laatst moet de naam van de stof worden veranderd naar een factor omdat het categorische data is.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="reproducable-science-data-analysis.html#cb4-1" tabindex="-1"></a><span class="co">#RawData veranderen van dbl naar int </span></span>
@@ -230,7 +252,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-7"><a href="reproducable-science-data-analysis.html#cb9-7" tabindex="-1"></a></span>
 <span id="cb9-8"><a href="reproducable-science-data-analysis.html#cb9-8" tabindex="-1"></a><span class="co">#Zorg ervoor dat de data 1 is door alle waarden door het gemiddelde te delen </span></span>
 <span id="cb9-9"><a href="reproducable-science-data-analysis.html#cb9-9" tabindex="-1"></a>Celegans_dataset_norm<span class="sc">$</span>RawData <span class="ot">&lt;-</span> (Celegans_dataset_norm<span class="sc">$</span>RawData <span class="sc">/</span> mean_control_negative)</span></code></pre></div>
-<p>Daarna wordt er een grafiek gemaakt van de genormaliseerde dat (AI werd gebruikt om te helpen met de berekeningen om de data te normaliseren)</p>
+<p>Daarna wordt er een grafiek gemaakt van de genormaliseerde dat (AI werd gebruikt om te helpen met de berekeningen en de code om de data te analyseren)</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="reproducable-science-data-analysis.html#cb10-1" tabindex="-1"></a>Celegans_dataset_norm<span class="sc">$</span>compConcentration_offset <span class="ot">&lt;-</span> Celegans_dataset_norm<span class="sc">$</span>compConcentration <span class="sc">+</span> <span class="fl">0.001</span></span>
 <span id="cb10-2"><a href="reproducable-science-data-analysis.html#cb10-2" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="reproducable-science-data-analysis.html#cb10-3" tabindex="-1"></a>Celegans_plot_normalized <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> Celegans_dataset_norm, <span class="fu">aes</span>(<span class="at">x =</span> compConcentration_offset, <span class="at">y =</span> RawData)) <span class="sc">+</span></span>
@@ -271,7 +293,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   &lt;fct&gt;                &lt;dbl&gt;
 ## 1 Ethanol                1.5</code></pre>
 <p><strong>Stappenplan voor vervolgonderzoek</strong></p>
-<p>Als vervolg experiment zou een dosis response analyse uitgevoerd kunnen worden. Deze analyse kan worden uitgevoerd in R, waarbij de drc package gebruikt kan worden.</p>
+<p>Als vervolg experiment zou een dosis response analyse uitgevoerd kunnen worden. Deze analyse kan worden uitgevoerd in R, waarbij de drc package gebruikt kan worden. Bij de workflow met deze package moet eerst het response type bepaald worden. Nadat het type response is gekozen wordt het gemiddelde berekend en weergeven. Om dit te genereren kunnen ingebouwde dose-response model gebruikt worden, waarbij de vorm van de curve wiskundig berekend wordt. Hierna kan een schatting van de effectieve doses berekend worden en daarna kunnen voorspellingen berekend worden om te kijken naar wat voor response de concentraties die niet gemeten zijn hebben (source). Na deze stappen kan er gekeken worden naar de EC50 (effectieve dosis voor 50% van de populatie), LD50 (dodelijke dosis voor 50% van de populatie) en IC50 (remmend biologisch effect bij 50% van de populatie).</p>
 
 </div>
             </section>
@@ -279,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="data-management-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-management-deel-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="reproducable-science-article.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
