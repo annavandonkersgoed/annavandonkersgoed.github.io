@@ -1,6 +1,7 @@
 fig:foldertree
 fig:readme
 fig:article
+fig:code
 introduction
 cirriculum-vitea
 plan-voor-de-toekomst
@@ -18,3 +19,4 @@ reproduceerbaarheid-r-code
 r-package
 introductie-project-amr
 paramized-markdown
+referenties
